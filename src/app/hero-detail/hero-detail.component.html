@@ -1,0 +1,10 @@
+<div class="card" *ngIf="hero">
+  <div class="card-block">
+    <form>
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input [(ngModel)]="hero.name" placeholder="name" class="form-control" name="name">
+      </div>
+    </form>
+  </div>
+</div>

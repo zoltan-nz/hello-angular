@@ -1,0 +1,8 @@
+<h2>My Heroes</h2>
+<div class="list-group">
+  <a *ngFor="let hero of heroes" (click)="onSelect(hero)" class="list-group-item list-group-item-action pointer" [class.active]="hero === selectedHero">
+    {{hero.id}}. {{hero.name}}
+  </a>
+</div>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
