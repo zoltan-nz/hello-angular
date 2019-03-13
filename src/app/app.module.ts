@@ -1,33 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroService } from './services/hero.service';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
-    HeroDetailComponent,
-    HeroesComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      { path: 'heroes', component: HeroesComponent },
-    ])
+    AppRoutingModule
   ],
-  providers: [HeroService],
+  providers: [],
   bootstrap: [AppComponent]
 })
-
-export class AppModule {
-}
+export class AppModule { }
