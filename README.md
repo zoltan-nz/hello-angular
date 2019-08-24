@@ -29,6 +29,6 @@ ng test
 ng e2e
 ```
 
-- [ ] Add Prettier
+- [x] Add `prettier` and `tslint-config-prettier`
 - [ ] Add mocha reporter to Karma
 - [ ] Update Karma coverage report style
