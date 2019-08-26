@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "lint": "ng lint --type-check --fix --format=stylish",
+    "e2e": "ng e2e --port 4300 --webdriver-update",
     "format": "prettier --write '**/*.{ts,js,html,json}'"
   },
   "private": true,
@@ -42,10 +42,10 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "karma-mocha-reporter": "^2.2.5",
     "prettier": "^1.18.2",
-    "protractor": "~5.4.2",
+    "protractor": "^5.4.2",
     "ts-node": "~8.4.1",
     "tslint": "~5.20.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "~3.6.4"
+    "typescript": "3.5"
   }
 }

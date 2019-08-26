@@ -43,7 +43,9 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-submodule-imports": [true, "@angular/core", "zone.js", "@angular/router", "@angular/platform-browser-dynamic"]
   },
   "rulesDirectory": ["codelyzer"]
 }
