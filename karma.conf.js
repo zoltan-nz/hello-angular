@@ -17,10 +17,10 @@ module.exports = function(config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/hello-angular'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['text', 'html', 'lcovonly'],
       fixWebpackSourcePaths: true,
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -28,5 +28,6 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
+    reportSlowerThan: 0.001
   });
 };

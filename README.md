@@ -30,5 +30,6 @@ ng e2e
 ```
 
 - [x] Add `prettier` and `tslint-config-prettier`
-- [ ] Add mocha reporter to Karma
-- [ ] Update Karma coverage report style
+- [x] Add mocha reporter to Karma
+- [x] Update Karma coverage report style
+- [ ] Clean up dummy content
