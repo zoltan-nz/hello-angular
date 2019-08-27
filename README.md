@@ -34,5 +34,6 @@ ng e2e
 - [x] Update Karma coverage report style
 - [x] Update linting rules and fix new linting issues
 - [x] Clean up dummy content
-- [ ] Try [`karma-jasmine-html-reporter`](https://github.com/dfederm/karma-jasmine-html-reporter#readme)
+- [x] Try [`karma-jasmine-html-reporter`](https://github.com/dfederm/karma-jasmine-html-reporter#readme)
+- [ ] Add back the `kjhtml` reporter to `karma.conf.js`.
 - [ ] Add Husky precommit checker
