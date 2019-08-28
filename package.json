@@ -5,10 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --no-watch",
+    "test:watch": "ng test",
     "lint": "ng lint --type-check --fix --format=stylish",
+    "lint:check": "ng lint --type-check --format=stylish",
     "e2e": "ng e2e --port 4300 --webdriver-update",
-    "format": "prettier --write '**/*.{ts,js,html,json}'"
+    "format": "prettier --write '**/*.{ts,js,html,json}'",
+    "format:check": "prettier -c '**/*.{ts,js,html,json}'"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +36,7 @@
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~12.11.1",
     "codelyzer": "^5.1.2",
+    "husky": "^3.0.9",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.0",
@@ -41,11 +45,17 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "karma-mocha-reporter": "^2.2.5",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "protractor": "^5.4.2",
     "ts-node": "~8.4.1",
     "tslint": "~5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-p format:check lint:check test"
+    }
   }
 }

@@ -35,5 +35,6 @@ ng e2e
 - [x] Update linting rules and fix new linting issues
 - [x] Clean up dummy content
 - [x] Try [`karma-jasmine-html-reporter`](https://github.com/dfederm/karma-jasmine-html-reporter#readme)
-- [ ] Add back the `kjhtml` reporter to `karma.conf.js`.
-- [ ] Add Husky precommit checker
+- [x] Add back the `kjhtml` reporter to `karma.conf.js`.
+- [x] Add Husky precommit checker
+- [ ] Add Bootstrap 4 support

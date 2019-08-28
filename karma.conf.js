@@ -21,7 +21,7 @@ module.exports = function(config) {
       reports: ['text', 'html', 'lcovonly'],
       fixWebpackSourcePaths: true,
     },
-    reporters: ['mocha', "kjhtml"],
+    reporters: ['mocha', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
