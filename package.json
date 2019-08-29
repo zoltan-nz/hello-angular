@@ -10,6 +10,7 @@
     "lint": "ng lint --type-check --fix --format=stylish",
     "lint:check": "ng lint --type-check --format=stylish",
     "e2e": "ng e2e --port 4300 --webdriver-update",
+    "e2e:watch": "chokidar 'e2e/**.*' 'src/**.*' -c 'ng e2e --port 4300'",
     "format": "prettier --write '**/*.{ts,js,html,json}'",
     "format:check": "prettier -c '**/*.{ts,js,html,json}'"
   },
@@ -35,6 +36,7 @@
     "@types/jasmine": "~3.4.4",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~12.11.1",
+    "chokidar-cli": "^2.0.0",
     "codelyzer": "^5.1.2",
     "husky": "^3.0.9",
     "jasmine-core": "~3.5.0",
