@@ -10,7 +10,7 @@
     "lint": "ng lint --type-check --fix --format=stylish",
     "lint:check": "ng lint --type-check --format=stylish",
     "e2e": "ng e2e --port 4300 --webdriver-update",
-    "e2e:watch": "chokidar 'e2e/**.*' 'src/**.*' -c 'ng e2e --port 4300'",
+    "e2e:watch": "chokidar './e2e/**' './src/**' -c 'ng e2e --port 4300'",
     "format": "prettier --write '**/*.{ts,js,html,json}'",
     "format:check": "prettier -c '**/*.{ts,js,html,json}'"
   },

@@ -12,6 +12,10 @@ exports.config = {
   specs: ['./src/**/*.e2e-spec.ts'],
   capabilities: {
     browserName: 'chrome',
+
+    chromeOptions: {
+      args: ['--headless'],
+    },
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

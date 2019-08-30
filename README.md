@@ -37,4 +37,5 @@ ng e2e
 - [x] Try [`karma-jasmine-html-reporter`](https://github.com/dfederm/karma-jasmine-html-reporter#readme)
 - [x] Add back the `kjhtml` reporter to `karma.conf.js`.
 - [x] Add Husky precommit checker
+- [x] Add e2e:watch task with chokidar
 - [ ] Add Bootstrap 4 support
