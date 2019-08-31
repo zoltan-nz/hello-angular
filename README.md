@@ -38,4 +38,14 @@ ng e2e
 - [x] Add back the `kjhtml` reporter to `karma.conf.js`.
 - [x] Add Husky precommit checker
 - [x] Add e2e:watch task with chokidar
-- [ ] Add Bootstrap 4 support
+- [x] Add Bootstrap 4 support. Add the official scss and [`@ng-bootstrap/ng-bootstrap`](https://ng-bootstrap.github.io/#/getting-started)
+
+## Bootstrap 4
+
+``` 
+$ yarn add bootstrap
+$ echo '@import "~bootstrap";' >> src/styles.scss
+$ yarn add @ng-bootstrap/ng-bootstrap 
+```
+
+
