@@ -40,6 +40,8 @@ ng e2e
 - [x] Add e2e:watch task with chokidar
 - [x] Add Bootstrap 4 support. Add the official scss and [`@ng-bootstrap/ng-bootstrap`](https://ng-bootstrap.github.io/#/getting-started)
 - [x] Add Page Not Found Route
+- [x] Convert karma conf to TypeScript
+- [x] Show coverage report at the end of the test and exclude test support files from the report
 - [ ] Add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
