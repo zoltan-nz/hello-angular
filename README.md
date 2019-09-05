@@ -42,6 +42,8 @@ ng e2e
 - [x] Add Page Not Found Route
 - [x] Convert karma conf to TypeScript
 - [x] Show coverage report at the end of the test and exclude test support files from the report
+- [x] Add responsive container and an empty Home Page
+- [ ] Add a Bootstrap nav bar with a link to Home page.
 - [ ] Add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
@@ -59,3 +61,8 @@ $ yarn add @ng-bootstrap/ng-bootstrap
 - [ ] Add top bar with store name and checkout icon
 
 - [ ] Add title for product list
+
+## Reading
+
+- [How to split into modules?](https://malcoded.com/posts/angular-fundamentals-modules/)
+- [Angular Unit Testing](https://dev.to/wescopeland/easier-angular-unit-testing-4aic)
