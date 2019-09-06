@@ -43,6 +43,7 @@ ng e2e
 - [x] Convert karma conf to TypeScript
 - [x] Show coverage report at the end of the test and exclude test support files from the report
 - [x] Add responsive container and an empty Home Page
+- [x] Disable Ivy
 - [ ] Add a Bootstrap nav bar with a link to Home page.
 - [ ] Add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
