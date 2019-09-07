@@ -44,13 +44,36 @@ ng e2e
 - [x] Show coverage report at the end of the test and exclude test support files from the report
 - [x] Add responsive container and an empty Home Page
 - [x] Disable Ivy
+- [x] Remove ng-bootstrap, add jquery and popper.js to use default Bootstrap 4
 - [ ] Add a Bootstrap nav bar with a link to Home page.
 - [ ] Add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
 ## Bootstrap 4
 
-``` 
+Original Bootstrap 4.
+
+```zsh
+$ yarn add bootsrap
+$ yarn add jquery
+$ yarn add popper.js
+$ echo '@import "~bootstrap";' >> src/styles.scss
+```
+
+Extend `angular.json` to import external packages in `projects > hello-angular > architect > build > options`.
+
+```zsh
+"scripts": [
+  "./node_modules/jquery/dist/jquery.slim.min.js",
+  "./node_modules/popper.js/dist/umd/popper.min.js",
+  "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+```
+
+
+Alternative option: using `ng-bootstrap`. No animation and custom API.
+
+```zsh
 $ yarn add bootstrap
 $ echo '@import "~bootstrap";' >> src/styles.scss
 $ yarn add @ng-bootstrap/ng-bootstrap 
