@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 describe('PageNotFoundComponent', () => {
   let component: PageNotFoundComponent;
   let fixture: ComponentFixture<PageNotFoundComponent>;
+  let compiled: ParentNode;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,6 +18,7 @@ describe('PageNotFoundComponent', () => {
     fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
   });
 
   it('should create', () => {
@@ -24,8 +26,6 @@ describe('PageNotFoundComponent', () => {
   });
 
   it('should render page not found message', () => {
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Page not found');
   });
 });

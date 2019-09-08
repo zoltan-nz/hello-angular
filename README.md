@@ -45,8 +45,8 @@ ng e2e
 - [x] Add responsive container and an empty Home Page
 - [x] Disable Ivy
 - [x] Remove ng-bootstrap, add jquery and popper.js to use default Bootstrap 4
-- [ ] Add a Bootstrap nav bar with a link to Home page.
-- [ ] Add My Store App to `/store` route.
+- [x] Add a Bootstrap nav bar with a link to Home page.
+- [ ] Create Store Module and add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
 ## Bootstrap 4

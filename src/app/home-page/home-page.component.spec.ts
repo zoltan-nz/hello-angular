@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
-import { AppComponent } from '../app.component';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
+  let compiled: ParentNode;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,6 +17,7 @@ describe('HomePageComponent', () => {
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
   });
 
   it('should create', () => {
@@ -24,8 +25,6 @@ describe('HomePageComponent', () => {
   });
 
   it('should render title', () => {
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Home Page');
   });
 });
