@@ -1,6 +1,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -10,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      declarations: [AppComponent, MainNavigationBarComponent],
     }).compileComponents();
   }));
 

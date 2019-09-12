@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainNavigationBarComponent } from './main-navigation-bar.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MainNavigationBarComponent', () => {
   let component: MainNavigationBarComponent;
@@ -9,6 +10,7 @@ describe('MainNavigationBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [MainNavigationBarComponent],
     }).compileComponents();
   }));
@@ -25,6 +27,6 @@ describe('MainNavigationBarComponent', () => {
   });
 
   it('should render expected menu items', () => {
-    expect(compiled.querySelectorAll('.nav-item').length).toBe(1);
+    expect(compiled.querySelectorAll('.nav-item').length).toBe(2);
   });
 });

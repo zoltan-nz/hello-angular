@@ -15,8 +15,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+          <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
+        <li class="nav-item"><a class="nav-link" routerLink="store" routerLinkActive="active">Store</a></li>
       </ul>
     </div>
   </div>
