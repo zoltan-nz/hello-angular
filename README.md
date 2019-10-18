@@ -46,6 +46,7 @@ ng e2e
 - [x] Disable Ivy
 - [x] Remove ng-bootstrap, add jquery and popper.js to use default Bootstrap 4
 - [x] Add a Bootstrap nav bar with a link to Home page.
+- [x] Replace karma with Jest.
 - [ ] Create Store Module and add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
@@ -86,7 +87,7 @@ $ yarn add @ng-bootstrap/ng-bootstrap
 
 - [ ] Add title for product list
 
-## Replace unit test with Jest
+## Replace karma unit test with Jest
 
 ```
 ng add @briebug/jest-schematic
@@ -95,6 +96,8 @@ ng add @briebug/jest-schematic
 - Check `package.json` file. Remove almost everything which is `karma` and `jasmine` related. You can remove the `@briebug/jest-schematic` also.
 - If you need `protractor`, you can keep the `jasmine-spec-reporter` package.
 - Run `yarn format`.
+
+Known issue: projects are not supported out of the box, they need a manual adjustment.
 
 
 ## Reading
