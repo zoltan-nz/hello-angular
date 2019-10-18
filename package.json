@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "ng lint --type-check --fix --format=stylish",
     "lint:check": "ng lint --type-check --format=stylish",
