@@ -6,8 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --no-watch --browsers='ChromeHeadless' --codeCoverage",
-    "test:watch": "ng test --codeCoverage",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "ng lint --type-check --fix --format=stylish",
     "lint:check": "ng lint --type-check --format=stylish",
     "e2e": "ng e2e --port 4300 --webdriver-update",
@@ -39,18 +39,14 @@
     "@angular/language-service": "~8.2.13",
     "@types/jasmine": "~3.4.6",
     "@types/jasminewd2": "~2.0.8",
+    "@types/jest": "24.0.22",
     "@types/node": "~12.12.7",
     "chokidar-cli": "^2.1.0",
     "codelyzer": "^5.2.0",
     "husky": "^3.0.9",
-    "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.4.1",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
-    "karma-mocha-reporter": "^2.2.5",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jest": "24.9.0",
+    "jest-preset-angular": "8.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "protractor": "^5.4.2",
@@ -62,6 +58,36 @@
   "husky": {
     "hooks": {
       "pre-commit": "run-p format:check lint:check test"
+    }
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "src"
+    ],
+    "transform": {
+      "^.+\\.(ts|js|html)$": "ts-jest"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup-jest.ts"
+    ],
+    "moduleNameMapper": {
+      "@app/(.*)": "<rootDir>/src/app/$1",
+      "@assets/(.*)": "<rootDir>/src/assets/$1",
+      "@core/(.*)": "<rootDir>/src/app/core/$1",
+      "@env": "<rootDir>/src/environments/environment",
+      "@src/(.*)": "<rootDir>/src/src/$1",
+      "@state/(.*)": "<rootDir>/src/app/state/$1"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": [
+          "jest-preset-angular/build/InlineFilesTransformer",
+          "jest-preset-angular/build/StripStylesTransformer"
+        ]
+      }
     }
   }
 }

@@ -86,6 +86,17 @@ $ yarn add @ng-bootstrap/ng-bootstrap
 
 - [ ] Add title for product list
 
+## Replace unit test with Jest
+
+```
+ng add @briebug/jest-schematic
+```
+
+- Check `package.json` file. Remove almost everything which is `karma` and `jasmine` related. You can remove the `@briebug/jest-schematic` also.
+- If you need `protractor`, you can keep the `jasmine-spec-reporter` package.
+- Run `yarn format`.
+
+
 ## Reading
 
 - [How to split into modules?](https://malcoded.com/posts/angular-fundamentals-modules/)
