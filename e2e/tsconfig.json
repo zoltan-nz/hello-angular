@@ -1,9 +1,11 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/e2e",
+    "outDir": "./out-tsc/e2e",
+    "types": ["puppeteer", "jest", "node"],
     "module": "commonjs",
-    "target": "es5",
-    "types": ["jasmine", "jasminewd2", "node"]
-  }
+    "emitDecoratorMetadata": true,
+    "allowJs": true
+  },
+  "include": ["./e2e/**/*.spec.ts"]
 }
