@@ -1,0 +1,12 @@
+dist: bionic
+language: node_js
+node_js:
+  - 12.13
+
+cache: yarn
+
+script:
+  - yarn format:check
+  - yarn lint:check
+  - yarn test
+  - yarn e2e:ci
