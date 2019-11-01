@@ -4,7 +4,7 @@ module.exports = {
     devtools: false,
     dumpio: true,
     headless: false,
-    slowMo: 250,
+    // slowMo: 250,
   },
   exitOnPageError: false,
 };
