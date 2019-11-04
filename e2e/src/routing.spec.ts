@@ -3,6 +3,7 @@ describe('Hello World', () => {
     await page.goto('http://localhost:4200', {
       waitUntil: 'networkidle0',
     });
+    await page.waitForSelector('app-main-navigation-bar');
   });
 
   it('should navigate to Store Page', async () => {
