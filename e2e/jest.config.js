@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'jest-puppeteer',
-  setupFilesAfterEnv: ['expect-puppeteer'],
+  setupFilesAfterEnv: ['expect-puppeteer', './jest.setup.js'],
   globals: {
     'ts-jest': {
       tsConfig: './tsconfig.json',

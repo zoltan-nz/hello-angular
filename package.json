@@ -10,8 +10,8 @@
     "test:watch": "jest --watch",
     "lint": "ng lint --type-check --fix --format=stylish",
     "lint:check": "ng lint --type-check --format=stylish",
-    "e2e:dev": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.dev.config.js jest --runInBand --config ./e2e/jest.config.js",
-    "e2e:ci": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.ci.config.js jest --detectOpenHandles --runInBand --config ./e2e/jest.config.js",
+    "e2e:dev": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.dev.config.js jest --detectOpenHandles --runInBand --config ./e2e/jest.config.js",
+    "e2e:ci": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.ci.config.js jest --runInBand --config ./e2e/jest.config.js",
     "format": "prettier --write '**/*.{ts,js,html,json}'",
     "format:check": "prettier -c '**/*.{ts,js,html,json}'"
   },
