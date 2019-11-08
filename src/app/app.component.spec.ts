@@ -2,6 +2,8 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
+import { CollapseModule } from 'ngx-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -10,7 +12,7 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, CollapseModule, BrowserAnimationsModule],
       declarations: [AppComponent, MainNavigationBarComponent],
     }).compileComponents();
   }));

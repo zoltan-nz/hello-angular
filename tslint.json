@@ -45,14 +45,7 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
     "no-implicit-dependencies": [true, "dev"],
-    "no-submodule-imports": [
-      true,
-      "@angular/core",
-      "zone.js",
-      "@angular/router",
-      "@angular/platform-browser-dynamic",
-      "@angular-devkit/build-angular"
-    ]
+    "no-submodule-imports": [true, "@angular", "@angular-devkit", "zone.js"]
   },
   "rulesDirectory": ["codelyzer"]
 }

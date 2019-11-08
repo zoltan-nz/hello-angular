@@ -1,5 +1,7 @@
 # HelloAngular
 
+Notes, tutorials, experiments, playground for Angular 8+ 
+
 ```
 ng serve
 
@@ -52,7 +54,7 @@ ng e2e
 
 ## Bootstrap 4
 
-Original Bootstrap 4.
+Option #1: Original Bootstrap 4.
 
 ```zsh
 $ yarn add bootsrap
@@ -71,13 +73,28 @@ Extend `angular.json` to import external packages in `projects > hello-angular >
 ]
 ```
 
-
-Alternative option: using `ng-bootstrap`. No animation and custom API.
+Option #2: [`ng-bootstrap`](https://ng-bootstrap.github.io/#/home). No animation and custom API.
 
 ```zsh
 $ yarn add bootstrap
 $ echo '@import "~bootstrap";' >> src/styles.scss
 $ yarn add @ng-bootstrap/ng-bootstrap 
+```
+
+Option #3: [`ngx-bootstrap`](https://valor-software.com/ngx-bootstrap/#/)
+
+- It comes with animation out of the box.
+- This is my suggested package.
+
+```zsh
+$ yarn add ngx-bootstrap bootstrap
+```
+
+Instead of importing files in `angular.json` add import to `styles.scss`.
+
+```scss
+@import "~bootstrap";
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
 ```
 
 ## My Store App
