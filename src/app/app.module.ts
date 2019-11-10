@@ -12,7 +12,7 @@ import { CollapseModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, HomePageComponent, MainNavigationBarComponent],
-  imports: [AppRoutingModule, BrowserModule, StoreAppModule, BrowserAnimationsModule, CollapseModule],
+  imports: [BrowserModule, StoreAppModule, BrowserAnimationsModule, CollapseModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
