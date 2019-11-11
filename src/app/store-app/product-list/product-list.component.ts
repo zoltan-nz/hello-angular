@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { products } from '../products';
+import { Component } from '@angular/core';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'store-app-product-list',
@@ -7,7 +7,7 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  products = products;
+  products: Product[] = products;
 
   share() {
     alert('Shared!');

@@ -25,7 +25,7 @@ import { ProductAlertComponent } from './product-alert/product-alert.component';
           {
             path: '',
             component: ProductListComponent,
-            children: [{ path: ':id', component: ProductDetailsComponent }],
+            children: [{ path: 'products/:productId', component: ProductDetailsComponent }],
           },
         ],
       },
