@@ -12,4 +12,8 @@ export class ProductListComponent {
   share() {
     alert('Shared!');
   }
+
+  onNotify() {
+    alert('Notified!');
+  }
 }
