@@ -1,0 +1,24 @@
+<h2>Cart</h2>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address">Address</label>
+    <input id="address" type="text" formControlName="address" />
+  </div>
+
+  <button
+    class="btn"
+    [className]="checkoutForm.valid ? 'btn-success' : 'btn-danger'"
+    type="submit"
+    [disabled]="!checkoutForm.valid"
+  >
+    Purchase
+  </button>
+</form>
+
+<p>Form status: {{ checkoutForm.status }}</p>
