@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreAppComponent } from './store-app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('StoreAppComponent', () => {
   let component: StoreAppComponent;
@@ -10,7 +11,7 @@ describe('StoreAppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, FontAwesomeModule],
       declarations: [StoreAppComponent, TopBarComponent],
     }).compileComponents();
   }));

@@ -9,10 +9,18 @@ import { MainNavigationBarComponent } from './main-navigation-bar/main-navigatio
 import { StoreAppModule } from './store-app/store-app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, HomePageComponent, MainNavigationBarComponent],
-  imports: [BrowserModule, StoreAppModule, BrowserAnimationsModule, CollapseModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FontAwesomeModule,
+    StoreAppModule,
+    BrowserAnimationsModule,
+    CollapseModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

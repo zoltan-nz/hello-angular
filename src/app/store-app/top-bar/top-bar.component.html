@@ -1,2 +1,14 @@
-<a [routerLink]="['/store/products']">Product List</a> |
-<a [routerLink]="['/store/cart']">Cart</a>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/store/products']" routerLinkActive="active">Product List</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/store/cart']" routerLinkActive="active"
+        ><fa-icon [icon]="shoppingCart"></fa-icon> Cart</a
+      >
+    </li>
+  </ul>
+</nav>
