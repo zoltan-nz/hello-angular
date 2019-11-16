@@ -4,21 +4,13 @@ import { StoreAppComponent } from './store-app.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ProductAlertComponent } from './product-alert/product-alert.component';
 import { CartComponent } from './cart/cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
-  declarations: [
-    StoreAppComponent,
-    TopBarComponent,
-    ProductListComponent,
-    ProductDetailsComponent,
-    ProductAlertComponent,
-    CartComponent,
-  ],
+  declarations: [StoreAppComponent, TopBarComponent, ProductListComponent, CartComponent, ProductCardComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -31,7 +23,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
           {
             path: 'products',
             component: ProductListComponent,
-            children: [{ path: 'products/:productId', component: ProductDetailsComponent }],
           },
           { path: 'cart', component: CartComponent },
         ],

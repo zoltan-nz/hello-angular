@@ -8,12 +8,4 @@ import { Product, products } from '../products';
 })
 export class ProductListComponent {
   products: Product[] = products;
-
-  share() {
-    alert('Shared!');
-  }
-
-  onNotify() {
-    alert('Notified!');
-  }
 }
