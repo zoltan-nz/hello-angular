@@ -1,27 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Spectator } from '@ngneat/spectator';
+import { createComponentFactory } from '@ngneat/spectator/jest';
 import { ProductListComponent } from './product-list.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ProductCardComponent } from '../product-card/product-card.component';
 
 describe('ProductListComponent', () => {
-  let component: ProductListComponent;
-  let fixture: ComponentFixture<ProductListComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ProductListComponent, ProductCardComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<ProductListComponent>;
+  const createComponent = createComponentFactory({
+    component: ProductListComponent,
+    shallow: true,
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(() => (spectator = createComponent()));
+
+  it('exists', () => {
+    expect(spectator.component).toBeDefined();
   });
 });

@@ -1,28 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Spectator } from '@ngneat/spectator';
+import { createComponentFactory } from '@ngneat/spectator/jest';
 import { StoreAppComponent } from './store-app.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('StoreAppComponent', () => {
-  let component: StoreAppComponent;
-  let fixture: ComponentFixture<StoreAppComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FontAwesomeModule],
-      declarations: [StoreAppComponent, TopBarComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(StoreAppComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<StoreAppComponent>;
+  const createComponent = createComponentFactory({
+    component: StoreAppComponent,
+    shallow: true,
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(() => (spectator = createComponent()));
+
+  it('exists', () => {
+    expect(spectator.component).toBeDefined();
   });
 });

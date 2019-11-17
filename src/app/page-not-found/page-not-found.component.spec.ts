@@ -1,31 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Spectator } from '@ngneat/spectator';
+import { createComponentFactory } from '@ngneat/spectator/jest';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { AppComponent } from '../app.component';
 
 describe('PageNotFoundComponent', () => {
-  let component: PageNotFoundComponent;
-  let fixture: ComponentFixture<PageNotFoundComponent>;
-  let compiled: ParentNode;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [PageNotFoundComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PageNotFoundComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-    compiled = fixture.debugElement.nativeElement;
+  let spectator: Spectator<PageNotFoundComponent>;
+  const createComponent = createComponentFactory({
+    component: PageNotFoundComponent,
+    shallow: true,
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
-  it('should render page not found message', () => {
-    expect(compiled.querySelector('h1').textContent).toContain('Page not found');
+  it('exists', () => {
+    expect(spectator.component).toBeDefined();
   });
 });

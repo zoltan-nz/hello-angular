@@ -1,44 +1,17 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
-import { CollapseModule } from 'ngx-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Spectator } from '@ngneat/spectator';
+import { createComponentFactory } from '@ngneat/spectator/jest';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
-  let compiled: ParentNode;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CollapseModule, BrowserAnimationsModule],
-      declarations: [AppComponent, MainNavigationBarComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-    compiled = fixture.debugElement.nativeElement;
+  let spectator: Spectator<AppComponent>;
+  const createComponent = createComponentFactory({
+    component: AppComponent,
+    shallow: true,
   });
 
-  it('should create the app', () => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
-  it(`should have as title 'hello-angular'`, () => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('hello-angular');
-  });
-
-  it('should have the main navigation bar component', () => {
-    expect(compiled.querySelectorAll('main-navigation-bar')).toBeTruthy();
-  });
-
-  it('should have a router outlet', () => {
-    expect(compiled.querySelectorAll('router-outlet')).toBeTruthy();
+  it('exists', () => {
+    expect(spectator.component).toBeDefined();
   });
 });
