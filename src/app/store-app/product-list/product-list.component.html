@@ -1,7 +1,9 @@
 <h2>Products</h2>
 
-<div class="card-deck">
+<div class="card-columns">
   <ng-container *ngFor="let product of products">
-    <store-app-product-card [product]="product"></store-app-product-card>
+    <div class="card">
+      <store-app-product-card [product]="product"></store-app-product-card>
+    </div>
   </ng-container>
 </div>
