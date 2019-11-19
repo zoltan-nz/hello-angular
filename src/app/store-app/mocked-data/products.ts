@@ -1,11 +1,6 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-}
+import { IProduct } from '../models/product.interface';
 
-export const products: Product[] = [
+export const products: IProduct[] = [
   {
     id: 1,
     name: 'Phone XL 2018',

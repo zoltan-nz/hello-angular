@@ -12,7 +12,7 @@
     "directive-selector": [true, "attribute", "app", "camelCase"],
     "component-selector": [true, "element", ["app", "store-app"], "kebab-case"],
     "import-blacklist": [true, "rxjs/Rx"],
-    "interface-name": false,
+    "interface-name": [true, "always-prefix"],
     "max-classes-per-file": false,
     "member-access": false,
     "member-ordering": [

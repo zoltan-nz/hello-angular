@@ -1,7 +1,7 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
 import { ProductCardComponent } from './product-card.component';
-import { products } from '../products';
+import { products } from '../mocked-data/products';
 
 describe('ProductCardComponent', () => {
   let spectator: Spectator<ProductCardComponent>;

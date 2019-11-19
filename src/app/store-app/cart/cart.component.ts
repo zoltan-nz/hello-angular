@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-export interface Customer {
+export interface ICustomer {
   name: string;
   address: string;
 }
@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit(value: Customer) {
+  onSubmit(value: ICustomer) {
     console.warn('Submitted', value);
   }
 }
