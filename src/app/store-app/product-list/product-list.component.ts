@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { IProduct } from '../models/product.interface';
 
 @Component({
@@ -13,6 +13,6 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.products$ = this.productService.products$;
+    this.products$ = this.productService.loadProducts();
   }
 }

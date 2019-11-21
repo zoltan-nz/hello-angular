@@ -10,6 +10,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { StoreAppRoutingModule } from './store-app-routing.module';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductCreateComponent,
     ProductDetailsComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, StoreAppRoutingModule, FontAwesomeModule],
+  imports: [CommonModule, ReactiveFormsModule, StoreAppRoutingModule, FontAwesomeModule, HttpClientModule],
   exports: [StoreAppComponent],
 })
 export class StoreAppModule {}
