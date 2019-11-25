@@ -1,6 +1,6 @@
-import { IProduct } from '../models/product.interface';
+import { IProduct, IProductsResponse } from '../models/product.interface';
 
-export const products: IProduct[] = [
+export const productsResponseList: IProduct[] = [
   {
     id: 1,
     name: 'Phone XL 2018',
@@ -39,3 +39,7 @@ export const products: IProduct[] = [
     description: 'A large phone with one of the best screens',
   },
 ];
+
+export const productsResponse: IProductsResponse = {
+  products: productsResponseList,
+};

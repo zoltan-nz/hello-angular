@@ -1,7 +1,7 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
 import { ProductCardComponent } from './product-card.component';
-import { products } from '../mocked-data/products';
+import { productsResponse } from '../mocked-data/products';
 
 describe('ProductCardComponent', () => {
   let spectator: Spectator<ProductCardComponent>;
@@ -13,7 +13,7 @@ describe('ProductCardComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('exists', () => {
-    spectator.setInput('product', products[0]);
+    spectator.setInput('product', productsResponse[0]);
     expect(spectator.component).toBeDefined();
   });
 });

@@ -1,13 +1,28 @@
 import { ProductService } from './product.service';
-import { createHttpFactory, SpectatorHttp } from '@ngneat/spectator/jest';
+import { createServiceFactory, mockProvider, SpectatorService } from '@ngneat/spectator/jest';
+import { ProductAdapter } from './product.adapter';
+import { of } from 'rxjs';
 
-describe('ProductService', () => {
-  let spectator: SpectatorHttp<ProductService>;
-  const createService = createHttpFactory(ProductService);
+const URL = 'url';
+const products = describe('ProductService', () => {
+  let spectator: SpectatorService<ProductService>;
+  let service: ProductService;
 
-  beforeEach(() => (spectator = createService()));
+  const createService = createServiceFactory({
+    service: ProductService,
+    providers: [
+      mockProvider(ProductAdapter, {
+        load$: () => of(),
+      }),
+    ],
+  });
+
+  beforeEach(() => {
+    spectator = createService();
+    service = spectator.service;
+  });
 
   it('should be created', () => {
-    expect(spectator.service).toBeDefined();
+    expect(service).toBeDefined();
   });
 });
