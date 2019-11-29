@@ -1,17 +1,17 @@
 import { Server } from 'miragejs';
 import { productsResponse } from '../src/app/store-app/mocked-data/products';
 
-export default class MirageServer {
+class MirageServer {
   public server: Server;
 
   constructor() {}
 
   start() {
-    this.server = new Server({});
+    this.server = this.server ? this.server : new Server();
     this.applySettings();
     this.applyRoutes();
 
-    console.log('Mirage Server is started');
+    console.log('Mirage Server is started.');
   }
 
   applySettings() {
@@ -24,7 +24,16 @@ export default class MirageServer {
   }
 
   stop() {
-    this.server.shutdown();
-    console.log('Mirage Server is stopped');
+    if (this.server) {
+      this.server.shutdown();
+      this.server = undefined;
+      console.log('Mirage Server is stopped.');
+    } else {
+      console.log('Mirage Server is already stopped.');
+    }
   }
 }
+
+const mirageServer = new MirageServer();
+
+export default mirageServer;

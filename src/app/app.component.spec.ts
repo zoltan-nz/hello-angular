@@ -1,17 +1,21 @@
 import { AppComponent } from './app.component';
-import { Spectator } from '@ngneat/spectator';
-import { createComponentFactory } from '@ngneat/spectator/jest';
+import { createRoutingFactory, SpectatorRouting } from '@ngneat/spectator/jest';
 
 describe('AppComponent', () => {
-  let spectator: Spectator<AppComponent>;
-  const createComponent = createComponentFactory({
+  let spectator: SpectatorRouting<AppComponent>;
+  let component: AppComponent;
+  const createComponent = createRoutingFactory({
     component: AppComponent,
     shallow: true,
+    queryParams: [],
   });
 
-  beforeEach(() => (spectator = createComponent()));
+  beforeEach(() => {
+    spectator = createComponent();
+    component = spectator.component;
+  });
 
   it('exists', () => {
-    expect(spectator.component).toBeDefined();
+    expect(component).toBeDefined();
   });
 });

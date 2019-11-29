@@ -3,14 +3,13 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import MirageServer from '../mirage/server';
+import mirageServer from '../mirage/server';
 
 if (environment.production) {
   enableProdMode();
 }
 
 if (!environment.production) {
-  const mirageServer = new MirageServer();
   mirageServer.start();
 }
 
