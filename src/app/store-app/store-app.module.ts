@@ -14,9 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
+    ProductListComponent,
     StoreAppComponent,
     TopBarComponent,
-    ProductListComponent,
     CartComponent,
     ProductCardComponent,
     ProductCreateComponent,

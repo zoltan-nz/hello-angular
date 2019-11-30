@@ -9,10 +9,7 @@ import { ProductAdapter } from './product.adapter';
   providedIn: 'root',
 })
 export class ProductService {
-  public products: Product[];
   public products$: Observable<Product[]> = this.productAdapter.load$();
 
-  constructor(private productAdapter: ProductAdapter) {
-    this.products$.subscribe(products => (this.products = products));
-  }
+  constructor(private productAdapter: ProductAdapter) {}
 }

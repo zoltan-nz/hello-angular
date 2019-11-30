@@ -1,25 +1,26 @@
 import { Spectator } from '@ngneat/spectator';
-import { createComponentFactory } from '@ngneat/spectator/jest';
 import { ProductListComponent } from './product-list.component';
+import { createComponentFactory, mockProvider } from '@ngneat/spectator/jest';
 import { ProductService } from '../services/product.service';
+import { of } from 'rxjs';
+import { productsResponse } from '../mocked-data/products';
+import Product from '../models/product.model';
 
 describe('ProductListComponent', () => {
   let spectator: Spectator<ProductListComponent>;
-  let component: ProductListComponent;
-  let productService: ProductService;
   const createComponent = createComponentFactory({
     component: ProductListComponent,
-    mocks: [ProductService],
     shallow: true,
+    providers: [
+      mockProvider(ProductService, {
+        products$: of([new Product(productsResponse.products[0])]),
+      }),
+    ],
   });
 
-  beforeEach(() => {
-    spectator = createComponent();
-    component = spectator.component;
-    productService = spectator.get<ProductService>(ProductService);
-  });
+  beforeEach(() => (spectator = createComponent()));
 
   it('exists', () => {
-    expect(component).toBeDefined();
+    expect(spectator.component).toBeDefined();
   });
 });

@@ -1,13 +1,15 @@
 <h2>Products</h2>
 
+{{ errorMessage }}
+
 <div class="card-columns">
-  <ng-container *ngIf="products$ | async as products; else loading">
+  <ng-container *ngIf="isLoading">
+    Loading...
+  </ng-container>
+
+  <ng-container *ngIf="products">
     <div class="card" *ngFor="let product of products">
       <store-app-product-card [product]="product"></store-app-product-card>
     </div>
   </ng-container>
 </div>
-
-<ng-template #loading>
-  Loading...
-</ng-template>

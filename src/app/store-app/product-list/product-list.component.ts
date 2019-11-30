@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { Observable, Subscription } from 'rxjs';
-import { IProduct } from '../models/product.interface';
+import Product from '../models/product.model';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'store-app-product-list',
@@ -9,10 +9,21 @@ import { IProduct } from '../models/product.interface';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  products$: Observable<IProduct[]>;
+  isLoading: boolean;
+
+  products: Product[];
+  errorMessage: string;
+
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.products$ = this.productService.products$;
+    this.isLoading = true;
+
+    this.productService.products$.pipe(finalize(() => (this.isLoading = false))).subscribe(
+      result => (this.products = result),
+      err => {
+        this.errorMessage = err;
+      },
+    );
   }
 }
