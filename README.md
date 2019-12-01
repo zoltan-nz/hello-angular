@@ -52,6 +52,20 @@ ng e2e
 - [ ] Create Store Module and add My Store App to `/store` route.
 - [ ] Add Tour of Heroes to `/heroes` route.
 
+## Authentication
+
+- [ ] Create a login page (Form: username, password, submit)
+- [ ] POST credentials to /api/login
+- [ ] Use response headers and interceptors to track auth sessions
+- [ ] Dealing with session cookies
+- [ ] Add AuthGuard
+- [ ] Create CurrentUser service 
+
+## Mirage.js
+
+- [ ] Add/remove Mirage.js from production build.
+- [ ] Activate/deactivate Mirage.js before Angular Router.
+
 ## Bootstrap 4
 
 Option #1: Original Bootstrap 4.
@@ -116,7 +130,13 @@ ng add @briebug/jest-schematic
 
 Known issue: projects are not supported out of the box, they need a manual adjustment.
 
+## Spectator
 
+Add Spectator as default collection:
+
+```
+$ ng config cli.defaultCollection @ngneat/spectator
+```
 ## Reading
 
 - [How to split into modules?](https://malcoded.com/posts/angular-fundamentals-modules/)

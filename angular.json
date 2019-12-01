@@ -8,6 +8,9 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@ngneat/spectator:spectator-component": {
+          "styleext": "scss"
         }
       },
       "root": "",
@@ -109,5 +112,8 @@
       }
     }
   },
-  "defaultProject": "hello-angular"
+  "defaultProject": "hello-angular",
+  "cli": {
+    "defaultCollection": "@ngneat/spectator"
+  }
 }
