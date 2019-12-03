@@ -29,7 +29,7 @@ class MirageServer {
       this.server = undefined;
       console.log('Mirage Server is stopped.');
     } else {
-      console.log('Mirage Server is already stopped.');
+      console.log('Mirage Server has been already stopped.');
     }
   }
 }

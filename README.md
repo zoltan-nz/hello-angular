@@ -137,6 +137,7 @@ Add Spectator as default collection:
 ```
 $ ng config cli.defaultCollection @ngneat/spectator
 ```
+
 ## Reading
 
 - [How to split into modules?](https://malcoded.com/posts/angular-fundamentals-modules/)
