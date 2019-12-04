@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminModule } from './admin/admin.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, HomePageComponent, MainNavigationBarComponent],
@@ -22,6 +23,7 @@ import { AdminModule } from './admin/admin.module';
     CollapseModule,
     AppRoutingModule,
     AdminModule,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
