@@ -4,17 +4,39 @@
       <div class="card-body">
         <h1 data-test-header>Login</h1>
 
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
           <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" type="text" class="form-control" data-test-username/>
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              [ngClass]="username.valid ? 'is-valid' : 'is-invalid'"
+              formControlName="username"
+              data-test-username
+              required
+            />
+            <div *ngIf="username.invalid" class="invalid-feedback">
+              Please enter your username
+            </div>
           </div>
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input id="password" type="password" class="form-control" data-test-password/>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              [ngClass]="password.valid ? 'is-valid' : 'is-invalid'"
+              formControlName="password"
+              data-test-password
+              required
+            />
+            <div *ngIf="password.invalid" class="invalid-feedback">
+              Please enter your password
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
         </form>
       </div>
     </div>
