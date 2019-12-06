@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ha-login',
@@ -7,19 +7,16 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    username: new FormControl('', { validators: Validators.required, updateOn: 'blur' }),
-    password: new FormControl('', { validators: Validators.required, updateOn: 'blur' }),
-  });
-  username: AbstractControl;
-  password: AbstractControl;
+  username = new FormControl('', { validators: Validators.required, updateOn: 'blur' });
+  password = new FormControl('', { validators: Validators.required, updateOn: 'blur' });
 
+  loginForm = new FormGroup({
+    username: this.username,
+    password: this.password,
+  });
   constructor() {}
 
-  ngOnInit() {
-    this.username = this.loginForm.get('username');
-    this.password = this.loginForm.get('password');
-  }
+  ngOnInit() {}
 
   submitLogin() {}
 }
