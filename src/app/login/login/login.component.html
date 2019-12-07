@@ -11,12 +11,12 @@
               id="username"
               type="text"
               class="form-control"
-              [ngClass]="username.valid ? 'is-valid' : 'is-invalid'"
+              [ngClass]="username.touched ? (username.valid ? 'is-valid' : 'is-invalid') : ''"
               formControlName="username"
               data-test-username
               required
             />
-            <div *ngIf="username.invalid" class="invalid-feedback">
+            <div *ngIf="username.touched && username.invalid" class="invalid-feedback">
               Please enter your username
             </div>
           </div>
@@ -27,12 +27,12 @@
               id="password"
               type="password"
               class="form-control"
-              [ngClass]="password.valid ? 'is-valid' : 'is-invalid'"
+              [ngClass]="password.touched ? (password.valid ? 'is-valid' : 'is-invalid') : ''"
               formControlName="password"
               data-test-password
               required
             />
-            <div *ngIf="password.invalid" class="invalid-feedback">
+            <div *ngIf="password.touched && password.invalid" class="invalid-feedback">
               Please enter your password
             </div>
           </div>
