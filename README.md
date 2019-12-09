@@ -142,3 +142,8 @@ $ ng config cli.defaultCollection @ngneat/spectator
 
 - [How to split into modules?](https://malcoded.com/posts/angular-fundamentals-modules/)
 - [Angular Unit Testing](https://dev.to/wescopeland/easier-angular-unit-testing-4aic)
+
+## Authentication
+
+- [Article](https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tutorial)
+- [Sample App](https://stackblitz.com/edit/angular-8-jwt-authentication-example)
