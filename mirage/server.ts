@@ -21,6 +21,9 @@ class MirageServer {
   applyRoutes() {
     this.server.timing = 2000;
     this.server.get('/products', () => productsResponse);
+    this.server.post('/users/authenticate', () => {
+      return { id: 1, username: 'user', firstName: 'Joe', lastName: 'User', token: 'fake-jwt-token' };
+    });
   }
 
   stop() {
