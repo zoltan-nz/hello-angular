@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { first, map } from 'rxjs/operators';
+import { AuthenticationService } from '../../../_services/authentication.service';
 
 @Component({
   selector: 'ha-login',
@@ -7,6 +10,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  loading = false;
+  returnUrl: string;
   username = new FormControl('', { validators: Validators.required, updateOn: 'change' });
   password = new FormControl('', { validators: Validators.required, updateOn: 'change' });
 
@@ -14,9 +19,29 @@ export class LoginComponent implements OnInit {
     username: this.username,
     password: this.password,
   });
-  constructor() {}
+  constructor(
+    public authenticationService: AuthenticationService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParamMap
+      .pipe(
+        map(params => {
+          this.returnUrl = params.get('returnUrl');
+        }),
+      )
+      .subscribe();
+  }
 
-  submitLogin() {}
+  submitLogin() {
+    this.loading = true;
+    this.authenticationService
+      .login(this.username.value, this.password.value)
+      .pipe(first())
+      .subscribe(data => {
+        this.router.navigate([this.returnUrl]).finally();
+      });
+  }
 }

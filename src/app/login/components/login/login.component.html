@@ -4,7 +4,12 @@
       <div class="card-body">
         <h1 data-test-header>Login</h1>
 
-        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
+        <form
+          *ngIf="!authenticationService.currentUserValue"
+          [formGroup]="loginForm"
+          (ngSubmit)="submitLogin()"
+          novalidate
+        >
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -38,6 +43,11 @@
           </div>
           <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
         </form>
+
+        <div *ngIf="authenticationService.currentUserValue">
+          <p>Logged in as {{ username.value }}</p>
+          <button class="btn btn-warning" (click)="authenticationService.logout()">Logout</button>
+        </div>
       </div>
     </div>
   </div>

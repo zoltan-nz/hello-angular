@@ -1,14 +1,17 @@
-import { byLabel, createComponentFactory, Spectator } from '@ngneat/spectator';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { byLabel } from '@ngneat/spectator';
+import { createRoutingFactory, SpectatorRouting } from '@ngneat/spectator/jest';
 
 import { LoginComponent } from './login.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 describe('LoginComponent', () => {
-  let spectator: Spectator<LoginComponent>;
+  let spectator: SpectatorRouting<LoginComponent>;
   let component: LoginComponent;
-  const createComponent = createComponentFactory({
+  const createComponent = createRoutingFactory({
     component: LoginComponent,
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, HttpClientTestingModule],
+    shallow: true,
   });
 
   beforeEach(() => {
