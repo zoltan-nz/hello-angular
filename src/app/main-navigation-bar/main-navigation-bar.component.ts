@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-main-navigation-bar',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavigationBarComponent {
   isCollapsed = true;
+
+  constructor(public authenticationService: AuthenticationService) {}
 
   toggleMenu() {
     this.isCollapsed = !this.isCollapsed;
