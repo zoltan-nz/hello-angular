@@ -1,17 +1,15 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import mockService from '../mirage/mock.service';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import mirageServer from '../mirage/server';
 
 if (environment.production) {
   enableProdMode();
 }
 
-if (!environment.production) {
-  mirageServer.start();
-}
+mockService.setup(environment.production);
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

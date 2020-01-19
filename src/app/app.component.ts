@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import mirageServer from '../../mirage/server';
+import mirageServer from '../../mirage/mirage.server';
 
 @Component({
   selector: 'app-root',

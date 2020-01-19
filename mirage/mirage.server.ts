@@ -1,29 +1,21 @@
 import { Server } from 'miragejs';
-import { productsResponse } from '../src/app/store-app/mocked-data/products';
+import scenarioManager from './scenario.manager';
 
 class MirageServer {
   public server: Server;
+  private scenarioManager = scenarioManager;
 
   constructor() {}
 
   start() {
     this.server = this.server ? this.server : new Server();
     this.applySettings();
-    this.applyRoutes();
-
+    scenarioManager.applyScenarios(this.server);
     console.log('Mirage Server is started.');
   }
 
   applySettings() {
     this.server.namespace = '/api';
-  }
-
-  applyRoutes() {
-    this.server.timing = 2000;
-    this.server.get('/products', () => productsResponse);
-    this.server.post('/users/authenticate', () => {
-      return { id: 1, username: 'user', firstName: 'Joe', lastName: 'User', token: 'fake-jwt-token' };
-    });
   }
 
   stop() {
