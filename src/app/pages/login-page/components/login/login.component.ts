@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first, map } from 'rxjs/operators';
-import { AuthenticationService } from '../../../_services/authentication.service';
+import { AuthenticationService } from '../../../../_services/authentication.service';
 
 @Component({
   selector: 'ha-login',

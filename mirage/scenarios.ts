@@ -1,5 +1,5 @@
 import { Server } from 'miragejs';
-import { productsResponse } from '../src/app/store-app/mocked-data/products';
+import { productsResponse } from '../src/app/pages/store-app-page/mocked-data/products';
 
 export type Scenario = (server: Server) => void;
 

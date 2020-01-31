@@ -1,6 +1,6 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory, mockProvider } from '@ngneat/spectator/jest';
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthenticationService } from '../../_services/authentication.service';
 import { MainNavigationBarComponent } from './main-navigation-bar.component';
 
 describe('MainNavigationBarComponent', () => {
