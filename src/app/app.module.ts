@@ -12,9 +12,16 @@ import { CollapseModule } from 'ngx-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminModule } from './pages/admin-page/admin.module';
 import { LoginModule } from './pages/login-page/login.module';
+import { CurrencyPageComponent } from './pages/currency-page/currency-page.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, HomePageComponent, MainNavigationBarComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    HomePageComponent,
+    MainNavigationBarComponent,
+    CurrencyPageComponent,
+  ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
