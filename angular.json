@@ -10,7 +10,8 @@
           "style": "scss"
         },
         "@ngneat/spectator:spectator-component": {
-          "styleext": "scss"
+          "styleext": "scss",
+          "jest": true
         }
       },
       "root": "",
