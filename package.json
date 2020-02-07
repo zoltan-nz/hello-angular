@@ -12,10 +12,10 @@
     "lint:check": "ng lint --type-check --format=stylish",
     "e2e:dev": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.dev.config.js jest --detectOpenHandles --runInBand --config ./e2e/jest.config.js",
     "e2e:ci": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.ci.config.js jest --runInBand --config ./e2e/jest.config.js",
-    "format": "prettier --list-different --write '**/*.{ts,js,html,json}'",
-    "format:check": "prettier --check '**/*.{ts,js,html,json}'",
+    "format": "prettier --list-different --write '**/*.{ts,js,html,json,md}'",
+    "format:check": "prettier --check '**/*.{ts,js,html,json,md}'",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "ci": "run-p -l lint:check format:check e2e:ci test"
+    "ci": "yarn && run-s -l build lint:check format:check test e2e:ci"
   },
   "private": true,
   "dependencies": {
