@@ -8,3 +8,7 @@ addons:
 
 script:
   - yarn ci
+
+after_script:
+  - yarn ci:report:codacy
+  - yarn ci:report:coveralls
