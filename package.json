@@ -14,9 +14,11 @@
     "e2e:ci": "JEST_PUPPETEER_CONFIG=./e2e/jest-puppeteer.ci.config.js jest --runInBand --config ./e2e/jest.config.js",
     "format": "prettier --list-different --write '**/*.{ts,js,html,json,md}'",
     "format:check": "prettier --check '**/*.{ts,js,html,json,md}'",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall": "yarn _build:mirage && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "ci:report:codacy": "cat ./coverage/lcov.info | codacy-coverage",
+    "ci:report:coveralls": "cat ./coverage/lcov.info | coveralls",
     "_build:mirage": "cd node_modules/miragejs && yarn && yarn prepublishOnly",
-    "ci": "run-s -l _build:mirage build lint:check format:check test e2e:ci"
+    "ci": "run-s -l build lint:check format:check test e2e:ci"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +53,9 @@
     "@types/node": "^13.9.1",
     "@types/puppeteer": "^2.0.1",
     "chokidar-cli": "^2.1.0",
+    "codacy-coverage": "^3.4.0",
     "codelyzer": "^5.2.1",
+    "coveralls": "^3.0.9",
     "expect-puppeteer": "^4.4.0",
     "husky": "^4.2.3",
     "jasmine-spec-reporter": "^4.2.1",

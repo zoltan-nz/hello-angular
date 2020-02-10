@@ -8,7 +8,7 @@ module.exports = {
     {
       command: 'yarn start',
       port: 4200,
-      launchTimeout: 40000,
+      launchTimeout: 120000,
       debug: true,
     },
   ],
