@@ -14,7 +14,7 @@ export class CurrencyFormatterService {
 
   constructor() {}
 
-  set plainValue(value: string) {
+  set plainValue(value: string | undefined) {
     const proposedFormattedValue = nativeNumberFormatter.format(parseFloat(value));
 
     if (proposedFormattedValue === 'NaN') {
@@ -26,18 +26,18 @@ export class CurrencyFormatterService {
     }
   }
 
-  get plainValue(): string {
+  get plainValue(): string | undefined {
     return this._plainValue;
   }
 
   set formattedValue(formattedValue: string) {
-    if (!formattedValue) {
+    if ([null, undefined, ''].includes(formattedValue)) {
       this.plainValue = '';
       return;
     }
 
-    const onlyNumbersDotsAndNegatives = formattedValue.toString().replace(/[^0-9.-]+/g, '');
-    const parsedValues = onlyNumbersDotsAndNegatives.match(/(\d+).(\d\d)/);
+    const onlyNumbersAndDot = formattedValue.toString().replace(/[^0-9.]+/g, '');
+    const parsedValues = onlyNumbersAndDot.match(/(\d+).?(\d?\d?)/);
 
     if (parsedValues) {
       const [_, integerPart, decimalPart] = parsedValues;
