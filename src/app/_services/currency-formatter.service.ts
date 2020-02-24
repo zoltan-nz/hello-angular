@@ -31,21 +31,16 @@ export class CurrencyFormatterService {
   }
 
   set formattedValue(formattedValue: string) {
-    if ([null, undefined, ''].includes(formattedValue)) {
+    const onlyNumbersAndDot = formattedValue?.toString().replace(/[^0-9.]+/g, '');
+    const parsedValues = onlyNumbersAndDot?.match(/(\d+).?(\d?\d?)/);
+
+    if (!parsedValues) {
       this.plainValue = '';
       return;
     }
 
-    const onlyNumbersAndDot = formattedValue.toString().replace(/[^0-9.]+/g, '');
-    const parsedValues = onlyNumbersAndDot.match(/(\d+).?(\d?\d?)/);
-
-    if (parsedValues) {
-      const [_, integerPart, decimalPart] = parsedValues;
-      this.plainValue = Number(`${integerPart}.${decimalPart}`).toFixed(2);
-      return;
-    }
-
-    this.plainValue = '';
+    const [_, integerPart, decimalPart] = parsedValues;
+    this.plainValue = Number(`${integerPart}.${decimalPart}`).toFixed(2);
   }
 
   get formattedValue(): string {
