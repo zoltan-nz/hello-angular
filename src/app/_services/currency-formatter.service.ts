@@ -14,7 +14,7 @@ export class CurrencyFormatterService {
 
   constructor() {}
 
-  set plainValue(value: string | undefined) {
+  set plainValue(value: string) {
     const proposedFormattedValue = nativeNumberFormatter.format(parseFloat(value));
 
     if (proposedFormattedValue === 'NaN') {
@@ -26,7 +26,7 @@ export class CurrencyFormatterService {
     }
   }
 
-  get plainValue(): string | undefined {
+  get plainValue(): string {
     return this._plainValue;
   }
 
