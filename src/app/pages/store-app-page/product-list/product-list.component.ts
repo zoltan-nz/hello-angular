@@ -20,10 +20,10 @@ export class ProductListComponent implements OnInit {
     this.isLoading = true;
 
     this.productService.products$.pipe(finalize(() => (this.isLoading = false))).subscribe(
-      result => (this.products = result),
-      err => {
+      (result) => (this.products = result),
+      (err) => {
         this.errorMessage = err;
-      },
+      }
     );
   }
 }

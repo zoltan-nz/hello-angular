@@ -72,9 +72,9 @@ describe('CurrencyKeydownControllerService', () => {
     'key: %s, inputValue: %s, selectStart: %d, selectEnd: %d, expected: %s',
     (key, value, selectionStart, selectionEnd, allowed) => {
       expect(service.isKeypressAllowed(createKeyDownEvent([key, value, selectionStart, selectionEnd]))).toEqual(
-        allowed,
+        allowed
       );
-    },
+    }
   );
 
   test('copy paste should work', () => {

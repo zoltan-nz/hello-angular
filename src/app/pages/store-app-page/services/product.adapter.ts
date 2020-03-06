@@ -16,12 +16,12 @@ export class ProductAdapter {
   load$() {
     return this.http.get<IProductsResponse>(this.url).pipe(
       catchError((err, caught: Observable<IProductsResponse>) => this.handleError(err, caught)),
-      map(response => this.serialize(response)),
+      map((response) => this.serialize(response))
     );
   }
 
   private serialize(productsResponse: IProductsResponse): Product[] {
-    return productsResponse.products.map(product => new Product(product));
+    return productsResponse.products.map((product) => new Product(product));
   }
 
   private handleError(err: any, caught: Observable<IProductsResponse>) {

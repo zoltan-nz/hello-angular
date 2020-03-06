@@ -9,7 +9,7 @@ export class CurrencyFormatDirective {
   constructor(
     private el: ElementRef<HTMLInputElement>,
     private currencyFormatter: CurrencyFormatterService,
-    private currencyKeydownController: CurrencyKeydownControllerService,
+    private currencyKeydownController: CurrencyKeydownControllerService
   ) {}
 
   @HostListener('change', ['$event'])

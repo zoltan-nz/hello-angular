@@ -1,6 +1,6 @@
 # HelloAngular
 
-Notes, tutorials, experiments, playground for Angular 8+
+Notes, tutorials, experiments, playground for Angular 9+
 
 ```
 ng serve

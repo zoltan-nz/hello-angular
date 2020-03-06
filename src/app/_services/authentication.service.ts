@@ -25,10 +25,10 @@ export class AuthenticationService {
     return this.http
       .post<any>('/api/users/authenticate', { username, password })
       .pipe(
-        map(user => {
+        map((user) => {
           this.currentUserSubject.next(user);
           return user;
-        }),
+        })
       );
   }
 

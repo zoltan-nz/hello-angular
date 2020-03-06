@@ -14,13 +14,13 @@ class ScenarioManager {
     const customScenarios = this.urlSearchParams.get('s');
     const customScenarioFunctions = customScenarios
       ?.split(',')
-      .map(customScenarioName => scenarioMap[customScenarioName.toUpperCase()])
-      .filter(customScenario => customScenario);
+      .map((customScenarioName) => scenarioMap[customScenarioName.toUpperCase()])
+      .filter((customScenario) => customScenario);
     if (customScenarioFunctions) this.activeScenarios = this.activeScenarios.concat(customScenarioFunctions);
   }
 
   applyScenarios(server: Server) {
-    this.activeScenarios.forEach(scenario => scenario.call(this, server));
+    this.activeScenarios.forEach((scenario) => scenario.call(this, server));
   }
 }
 

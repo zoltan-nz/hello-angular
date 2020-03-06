@@ -34,7 +34,7 @@ describe('CurrencyFormatterService', () => {
       service.plainValue = newPlainValue;
       expect(service.plainValue).toEqual(expectedPlainValue);
       expect(service.formattedValue).toEqual(expectedFormattedValue);
-    },
+    }
   );
 
   test.each([
@@ -63,6 +63,6 @@ describe('CurrencyFormatterService', () => {
       service.formattedValue = newFormattedValue;
       expect(service.plainValue).toEqual(expectedPlainValue);
       expect(service.formattedValue).toEqual(expectedFormattedValue);
-    },
+    }
   );
 });

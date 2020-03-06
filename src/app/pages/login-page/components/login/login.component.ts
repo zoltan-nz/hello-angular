@@ -22,15 +22,15 @@ export class LoginComponent implements OnInit {
   constructor(
     public authenticationService: AuthenticationService,
     private route: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.route.queryParamMap
       .pipe(
-        map(params => {
+        map((params) => {
           this.returnUrl = params.get('returnUrl');
-        }),
+        })
       )
       .subscribe();
   }
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService
       .login(this.username.value, this.password.value)
       .pipe(first())
-      .subscribe(data => {
+      .subscribe((data) => {
         this.router.navigate([this.returnUrl]).finally();
       });
   }
