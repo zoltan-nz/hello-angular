@@ -31,26 +31,13 @@ ng test
 ng e2e
 ```
 
-- [x] Add `prettier` and `tslint-config-prettier`
-- [x] Add mocha reporter to Karma
-- [x] Update Karma coverage report style
-- [x] Update linting rules and fix new linting issues
-- [x] Clean up dummy content
-- [x] Try [`karma-jasmine-html-reporter`](https://github.com/dfederm/karma-jasmine-html-reporter#readme)
-- [x] Add back the `kjhtml` reporter to `karma.conf.js`.
-- [x] Add Husky precommit checker
-- [x] Add e2e:watch task with chokidar
-- [x] Add Bootstrap 4 support. Add the official scss and [`@ng-bootstrap/ng-bootstrap`](https://ng-bootstrap.github.io/#/getting-started)
-- [x] Add Page Not Found Route
-- [x] Convert karma conf to TypeScript
-- [x] Show coverage report at the end of the test and exclude test support files from the report
-- [x] Add responsive container and an empty Home Page
-- [x] Disable Ivy
-- [x] Remove ng-bootstrap, add jquery and popper.js to use default Bootstrap 4
-- [x] Add a Bootstrap nav bar with a link to Home page.
-- [x] Replace karma with Jest.
-- [ ] Create Store Module and add My Store App to `/store` route.
-- [ ] Add Tour of Heroes to `/heroes` route.
+## Added features
+
+- [x] Prettier
+- [x] Replace Karma with Jest
+- [x] Replace Protractor with Puppeteer
+- [x] Use Spectator as test helper
+- [x] Add Husky
 
 ## Authentication
 
