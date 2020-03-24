@@ -1,10 +1,18 @@
 <h1>Currency Form</h1>
-<form>
-  <ha-currency-input></ha-currency-input>
-  <p>Convert To</p>
-</form>
+<form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <ha-currency-input class="col-md-3" formControlName="convertFrom" [label]="'Convert From'"></ha-currency-input>
+  </div>
+  <div class="row">
+    <ha-currency-input class="col-md-3" formControlName="convertTo" [label]="'Convert To'"></ha-currency-input>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!currencyForm.valid">Submit</button>
 
-<form action="">
-  <p>Other currency input field</p>
-  <p>Submit button to convert back</p>
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">{{ currencyForm.value | json }}</li>
+      </ul>
+    </div>
+  </div>
 </form>

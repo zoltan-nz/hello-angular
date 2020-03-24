@@ -1,3 +1,4 @@
+import { NgControl } from '@angular/forms';
 import { createDirectiveFactory, mockProvider, SpectatorDirective } from '@ngneat/spectator/jest';
 import { CurrencyFormatterService } from '../_services/currency-formatter.service';
 import { CurrencyKeydownControllerService } from '../_services/currency-keydown-controller.service';
@@ -8,7 +9,7 @@ describe('CurrencyFormatDirective ', () => {
   let spectator: SpectatorDirective<CurrencyFormatDirective>;
   const createDirective = createDirectiveFactory({
     directive: CurrencyFormatDirective,
-    providers: [mockProvider(CurrencyFormatterService), mockProvider(CurrencyKeydownControllerService)],
+    providers: [NgControl, mockProvider(CurrencyFormatterService), mockProvider(CurrencyKeydownControllerService)],
   });
 
   it('should work', () => {

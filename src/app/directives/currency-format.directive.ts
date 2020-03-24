@@ -1,34 +1,41 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
+import { NgControl } from '@angular/forms';
 import { CurrencyFormatterService } from '../_services/currency-formatter.service';
 import { CurrencyKeydownControllerService } from '../_services/currency-keydown-controller.service';
 
 @Directive({
   selector: '[currencyFormat]',
 })
-export class CurrencyFormatDirective {
+export class CurrencyFormatDirective implements OnInit {
+  private el: HTMLInputElement;
+
   constructor(
-    private el: ElementRef<HTMLInputElement>,
+    private elementRef: ElementRef<HTMLInputElement>,
+    private ngControl: NgControl,
     private currencyFormatter: CurrencyFormatterService,
     private currencyKeydownController: CurrencyKeydownControllerService
-  ) {}
-
-  @HostListener('change', ['$event'])
-  onChange($event: Event) {}
-
-  @HostListener('focus', ['$event'])
-  onFocus($event: FocusEvent) {
-    const target = $event.target as HTMLInputElement;
-    this.currencyFormatter.formattedValue = target.value;
-
-    target.value = this.currencyFormatter.plainValue;
+  ) {
+    this.el = elementRef.nativeElement;
   }
 
-  @HostListener('blur', ['$event'])
-  onBlur($event: FocusEvent) {
-    const target = $event.target as HTMLInputElement;
-    this.currencyFormatter.plainValue = target.value;
+  ngOnInit(): void {
+    this.currencyFormatter.formattedValue = this.ngControl.value;
+    this.el.value = this.currencyFormatter.formattedValue;
+  }
 
-    target.value = this.currencyFormatter.formattedValue;
+  @HostListener('focus')
+  onFocus() {
+    this.currencyFormatter.formattedValue = this.el.value;
+    this.el.value = this.currencyFormatter.plainValue;
+  }
+
+  @HostListener('blur')
+  onBlur() {
+    this.currencyFormatter.formattedValue = this.el.value;
+
+    // Send up the plain value to the host form. Formatted value is presented only in the input field.
+    this.ngControl.control.setValue(this.currencyFormatter.plainValue);
+    this.el.value = this.currencyFormatter.formattedValue;
   }
 
   @HostListener('keydown', ['$event'])
@@ -45,7 +52,6 @@ export class CurrencyFormatDirective {
     const clipboardData: DataTransfer | null = window['clipboardData'] ? window['clipboardData'] : $event.clipboardData;
     this.currencyFormatter.formattedValue = clipboardData.getData('text');
 
-    const target = $event.target as HTMLInputElement;
-    target.value = this.currencyFormatter.plainValue;
+    this.el.value = this.currencyFormatter.plainValue;
   }
 }

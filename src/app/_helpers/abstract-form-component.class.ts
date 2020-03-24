@@ -1,8 +1,7 @@
-import { AbstractControl, ControlValueAccessor, ValidationErrors, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, FormControl, ValidationErrors, Validator } from '@angular/forms';
 
 export default class AbstractFormComponentClass implements ControlValueAccessor, Validator {
-  onChange;
-  onTouched;
+  form: FormControl = new FormControl('');
   onValidatorChange;
   isDisabled;
   value;
@@ -10,11 +9,11 @@ export default class AbstractFormComponentClass implements ControlValueAccessor,
   constructor() {}
 
   registerOnChange(fn: any): void {
-    this.onChange = fn;
+    this.form.valueChanges.subscribe(fn);
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouched = fn;
+    this.form.valueChanges.subscribe(fn);
   }
 
   registerOnValidatorChange(fn: () => void): void {
@@ -30,6 +29,6 @@ export default class AbstractFormComponentClass implements ControlValueAccessor,
   }
 
   writeValue(value: any): void {
-    this.value = value;
+    this.form.setValue(value);
   }
 }
