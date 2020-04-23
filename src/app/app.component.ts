@@ -1,34 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { autorun } from 'mobx';
 import mirageServer from '../mirage/mirage.server';
+import { RouterX } from './_services/router.mobx';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'hello-angular';
-  public queryParams$: Observable<ParamMap>;
 
-  constructor(private route: ActivatedRoute) {
-    this.queryParams$ = this.route.queryParamMap.pipe(map((params: ParamMap) => params));
-  }
-  ngOnInit(): void {
-    this.queryParams$.subscribe(this.manageMirageMockServer);
+  constructor(public routerX: RouterX) {
+    autorun(() => this.manageMirageMockServer());
   }
 
-  manageMirageMockServer(paramMap: ParamMap) {
-    const mirageParam: string = paramMap.get('mirage');
+  manageMirageMockServer() {
+    const mirageParam: string = this.routerX.paramMap.get('mirage');
 
     if (mirageParam === 'on') {
-      mirageServer.start();
+      return mirageServer.start();
     }
 
     if (mirageParam === 'off') {
-      mirageServer.stop();
+      return mirageServer.stop();
     }
   }
 
