@@ -3,7 +3,7 @@ import { ProductListComponent } from './product-list.component';
 import { createComponentFactory, mockProvider } from '@ngneat/spectator/jest';
 import { ProductService } from '../services/product.service';
 import { of } from 'rxjs';
-import { productsResponse } from '../mocked-data/products';
+import { productsResponse } from '../../../../mirage/mocked-data/products';
 import Product from '../models/product.model';
 
 describe('ProductListComponent', () => {

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoriesPageComponent } from './categories-page/categories-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { StoreAppComponent } from './store-app.component';
@@ -16,6 +17,7 @@ const storeAppRoutes: Routes = [
       { path: 'products/new', component: ProductCreateComponent },
       { path: 'products/:id', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'categories', component: CategoriesPageComponent },
     ],
   },
 ];

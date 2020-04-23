@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MobxAngularModule } from 'mobx-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { StoreAppModule } from './pages/store-app-page/store-app.module';
     AdminModule,
     LoginModule,
     ReactiveFormsModule,
+    MobxAngularModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

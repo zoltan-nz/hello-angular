@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import mockService from '../mirage/mock.service';
+import mockService from './mirage/mock.service';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
