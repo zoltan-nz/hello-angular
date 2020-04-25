@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
+import { Injectable, Injector } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, ParamMap, Router } from '@angular/router';
 import { action, observable } from 'mobx-angular';
 import { filter } from 'rxjs/operators';
 
@@ -8,24 +8,15 @@ import { filter } from 'rxjs/operators';
 })
 export class RouterX {
   @observable url = '';
-  @observable queryParamKeys: string[] = [];
-  @observable paramMap: ParamMap;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router) {
     router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(this.routeListener);
-    activatedRoute.queryParamMap.subscribe(this.paramMapListener);
   }
 
   @action
   private routeListener = (event: NavigationEnd) => {
     this.url = event.urlAfterRedirects;
     console.log('URL:', this.url);
-  };
-
-  @action
-  private paramMapListener = (paramMap: ParamMap) => {
-    this.queryParamKeys = paramMap.keys;
-    this.paramMap = paramMap;
   };
 
   @action

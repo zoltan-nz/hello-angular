@@ -1,10 +1,11 @@
-import { getProductsEmpty, getProductsOk, postAuthenticateOk, slowResponse } from './scenarios';
+import { getCategoriesOk, getProductsEmpty, getProductsOk, postAuthenticateOk, slowResponse } from './scenarios';
 
 export const scenarioMap = {
   SLOW_RESPONSE: slowResponse,
   GET_PRODUCTS_OK: getProductsOk,
   GET_PRODUCTS_EMPTY: getProductsEmpty,
   POST_AUTH_OK: postAuthenticateOk,
+  GET_CATEGORIES_OK: getCategoriesOk,
 };
 
-export const HAPPY_PATH = [scenarioMap.GET_PRODUCTS_OK, scenarioMap.POST_AUTH_OK];
+export const HAPPY_PATH = [scenarioMap.GET_PRODUCTS_OK, scenarioMap.POST_AUTH_OK, scenarioMap.GET_CATEGORIES_OK];

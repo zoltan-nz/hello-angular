@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { autorun } from 'mobx';
+import { action, observable } from 'mobx-angular';
 import mirageServer from '../mirage/mirage.server';
 import { RouterX } from './_services/router.mobx';
 
@@ -11,18 +13,24 @@ import { RouterX } from './_services/router.mobx';
 export class AppComponent {
   title = 'hello-angular';
 
-  constructor(public routerX: RouterX) {
+  @observable mirageParam: string;
+
+  constructor(public routerX: RouterX, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParamMap.subscribe(this.updateMirageParam);
     autorun(() => this.manageMirageMockServer());
   }
 
-  manageMirageMockServer() {
-    const mirageParam: string = this.routerX.paramMap.get('mirage');
+  @action
+  updateMirageParam = (queryParamMap: ParamMap) => {
+    this.mirageParam = queryParamMap.get('mirage');
+  };
 
-    if (mirageParam === 'on') {
+  manageMirageMockServer() {
+    if (this.mirageParam === 'on') {
       return mirageServer.start();
     }
 
-    if (mirageParam === 'off') {
+    if (this.mirageParam === 'off') {
       return mirageServer.stop();
     }
   }

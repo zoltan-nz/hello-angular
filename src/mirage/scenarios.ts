@@ -1,4 +1,5 @@
 import { Server } from 'miragejs';
+import { categoriesResponse } from './mocked-data/categories';
 import { productsResponse } from './mocked-data/products';
 
 export type Scenario = (server: Server) => void;
@@ -16,3 +17,5 @@ export const postAuthenticateOk: Scenario = (server: Server) =>
   server.post('/users/authenticate', () => {
     return { id: 1, username: 'user', firstName: 'Joe', lastName: 'User', token: 'fake-jwt-token' };
   });
+
+export const getCategoriesOk: Scenario = (server: Server) => server.get('/categories', () => categoriesResponse);
