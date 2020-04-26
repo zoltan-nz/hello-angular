@@ -1,6 +1,6 @@
 import { Server } from 'miragejs';
 import { categoriesResponse } from './mocked-data/categories';
-import { productsResponse } from './mocked-data/products';
+import { productsResponse, productsResponseListCategory2 } from './mocked-data/products';
 
 export type Scenario = (server: Server) => void;
 
@@ -19,3 +19,6 @@ export const postAuthenticateOk: Scenario = (server: Server) =>
   });
 
 export const getCategoriesOk: Scenario = (server: Server) => server.get('/categories', () => categoriesResponse);
+
+export const getProductsByCategoryOk: Scenario = (server: Server) =>
+  server.get('/categories/:id/products', () => ({ products: productsResponseListCategory2 }));

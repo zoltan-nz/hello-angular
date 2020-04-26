@@ -2,7 +2,7 @@
 
 {{ errorMessage }}
 
-<div class="card-columns">
+<div class="card-columns" *mobxAutorun>
   <ng-container *ngIf="isLoading">
     Loading...
   </ng-container>

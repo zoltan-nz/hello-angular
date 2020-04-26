@@ -1,9 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { action, observable } from 'mobx-angular';
+import { Observable, throwError } from 'rxjs';
+import { catchError, finalize, map } from 'rxjs/operators';
 import { IProductsResponse } from '../models/product.interface';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, map, retry } from 'rxjs/operators';
 import Product from '../models/product.model';
-import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,20 +12,29 @@ import { Observable, of, throwError } from 'rxjs';
 export class ProductAdapter {
   url = '/api/products';
 
+  @observable isLoading = false;
+
   constructor(private http: HttpClient) {}
 
+  private buildUrl(categoryId: string) {
+    return `/api/categories/${categoryId}/products`;
+  }
+
   load$() {
-    return this.http.get<IProductsResponse>(this.url).pipe(
-      catchError((err, caught: Observable<IProductsResponse>) => this.handleError(err, caught)),
-      map((response) => this.serialize(response))
+    return this.http.get<IProductsResponse>(this.url).pipe(catchError(this.handleError), map(this.serialize));
+  }
+
+  @action
+  loadByCategoryId$(categoryId: string) {
+    this.isLoading = true;
+    return this.http.get<IProductsResponse>(this.buildUrl(categoryId)).pipe(
+      map(this.serialize),
+      finalize(() => (this.isLoading = false))
     );
   }
 
-  private serialize(productsResponse: IProductsResponse): Product[] {
-    return productsResponse.products.map((product) => new Product(product));
-  }
+  private serialize = (productsResponse: IProductsResponse): Product[] =>
+    productsResponse.products.map((product) => new Product(product));
 
-  private handleError(err: any, caught: Observable<IProductsResponse>) {
-    return throwError('Sorry...');
-  }
+  private handleError = (err: any, caught: Observable<IProductsResponse>) => throwError('Sorry...');
 }
