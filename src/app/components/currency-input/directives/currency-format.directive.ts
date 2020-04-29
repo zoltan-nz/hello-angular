@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { CurrencyFormatterService } from '../_services/currency-formatter.service';
-import { CurrencyKeydownControllerService } from '../_services/currency-keydown-controller.service';
+import { CurrencyFormatterService } from '../services/currency-formatter.service';
+import { CurrencyKeydownControllerService } from '../services/currency-keydown-controller.service';
 
 @Directive({
   selector: '[currencyFormat]',

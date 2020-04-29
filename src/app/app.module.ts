@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurrencyInputComponent } from './components/currency-input/currency-input.component';
 import { MainNavigationBarComponent } from './components/main-navigation-bar/main-navigation-bar.component';
-import { CurrencyFormatDirective } from './directives/currency-format.directive';
+import { CurrencyFormatDirective } from './components/currency-input/directives/currency-format.directive';
 import { TrackActivityDirective } from './directives/track-activity.directive';
 import { AdminModule } from './pages/admin-page/admin.module';
 import { CurrencyPageComponent } from './pages/currency-page/currency-page.component';

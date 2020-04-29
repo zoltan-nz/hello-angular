@@ -1,7 +1,7 @@
 import { NgControl } from '@angular/forms';
 import { createDirectiveFactory, mockProvider, SpectatorDirective } from '@ngneat/spectator/jest';
-import { CurrencyFormatterService } from '../_services/currency-formatter.service';
-import { CurrencyKeydownControllerService } from '../_services/currency-keydown-controller.service';
+import { CurrencyFormatterService } from '../services/currency-formatter.service';
+import { CurrencyKeydownControllerService } from '../services/currency-keydown-controller.service';
 
 import { CurrencyFormatDirective } from './currency-format.directive';
 
