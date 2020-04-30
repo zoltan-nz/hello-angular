@@ -8,13 +8,13 @@ import { MobxAngularModule } from 'mobx-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurrencyInputComponent } from './components/currency-input/currency-input.component';
-import { MainNavigationBarComponent } from './components/main-navigation-bar/main-navigation-bar.component';
 import { CurrencyFormatDirective } from './components/currency-input/directives/currency-format.directive';
+import { MainNavigationBarComponent } from './components/main-navigation-bar/main-navigation-bar.component';
 import { TrackActivityDirective } from './directives/track-activity.directive';
-import { AdminModule } from './pages/admin-page/admin.module';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { CurrencyPageComponent } from './pages/currency-page/currency-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { LoginModule } from './pages/login-page/login.module';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PageNotFoundComponent } from './pages/not-found-page/page-not-found.component';
 import { StoreAppModule } from './pages/store-app-page/store-app.module';
 
@@ -28,6 +28,8 @@ import { StoreAppModule } from './pages/store-app-page/store-app.module';
     CurrencyInputComponent,
     CurrencyFormatDirective,
     TrackActivityDirective,
+    LoginPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,6 @@ import { StoreAppModule } from './pages/store-app-page/store-app.module';
     StoreAppModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AdminModule,
-    LoginModule,
     ReactiveFormsModule,
     MobxAngularModule,
   ],

@@ -1,11 +1,11 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
-import { AdminDashboardComponent } from './admin-dashboard.component';
+import { AdminPageComponent } from './admin-page.component';
 
 describe('AdminComponent', () => {
-  let spectator: Spectator<AdminDashboardComponent>;
+  let spectator: Spectator<AdminPageComponent>;
   const createComponent = createComponentFactory({
-    component: AdminDashboardComponent,
+    component: AdminPageComponent,
     shallow: true,
   });
 

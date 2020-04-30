@@ -3,13 +3,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { byLabel } from '@ngneat/spectator';
 import { createRoutingFactory, SpectatorRouting } from '@ngneat/spectator/jest';
 
-import { LoginComponent } from './login.component';
+import { LoginPageComponent } from './login-page.component';
 
 describe('LoginComponent', () => {
-  let spectator: SpectatorRouting<LoginComponent>;
-  let component: LoginComponent;
+  let spectator: SpectatorRouting<LoginPageComponent>;
+  let component: LoginPageComponent;
   const createComponent = createRoutingFactory({
-    component: LoginComponent,
+    component: LoginPageComponent,
     imports: [ReactiveFormsModule, HttpClientTestingModule],
     shallow: true,
   });
