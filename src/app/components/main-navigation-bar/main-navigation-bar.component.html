@@ -47,3 +47,20 @@
     </div>
   </div>
 </nav>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/products']" routerLinkActive="active">Product List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/categories']" routerLinkActive="active">Categories</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/cart-page']" routerLinkActive="active"
+        ><fa-icon [icon]="shoppingCart"></fa-icon> Cart</a
+      >
+    </li>
+  </ul>
+</nav>

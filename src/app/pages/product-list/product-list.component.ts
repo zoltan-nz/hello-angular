@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { computed } from 'mobx-angular';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../../_services/product.service';
 
 @Component({
   selector: 'store-app-product-list',

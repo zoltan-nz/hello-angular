@@ -8,10 +8,10 @@ export interface ICustomer {
 
 @Component({
   selector: 'store-app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  templateUrl: './cart-page.component.html',
+  styleUrls: ['./cart-page.component.scss'],
 })
-export class CartComponent implements OnInit {
+export class CartPageComponent implements OnInit {
   items;
   checkoutForm;
 

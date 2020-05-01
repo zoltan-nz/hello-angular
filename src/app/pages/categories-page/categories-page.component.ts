@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { computed } from 'mobx-angular';
-import CategoryService from '../services/category.service';
+import CategoryService from '../../_services/category.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

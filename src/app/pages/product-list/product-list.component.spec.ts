@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory, mockProvider } from '@ngneat/spectator/jest';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../../_services/product.service';
 import { ProductListComponent } from './product-list.component';
 
 describe('ProductListComponent', () => {

@@ -1,4 +1,4 @@
-import { IProduct, IProductsResponse } from '../../app/pages/store-app-page/models/product.interface';
+import { IProduct, IProductsResponse } from '../../app/_models/product.interface';
 
 export const products: IProduct[] = [
   {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { action, computed, observable } from 'mobx-angular';
 import { map } from 'rxjs/operators';
-import Product from '../models/product.model';
+import Product from '../_models/product.model';
 import { ProductAdapter } from './product.adapter';
 
 @Injectable({

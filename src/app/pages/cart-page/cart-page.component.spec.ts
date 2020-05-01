@@ -1,12 +1,12 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
-import { CartComponent } from './cart.component';
+import { CartPageComponent } from './cart-page.component';
 import { FormBuilder } from '@angular/forms';
 
 describe('CartComponent', () => {
-  let spectator: Spectator<CartComponent>;
+  let spectator: Spectator<CartPageComponent>;
   const createComponent = createComponentFactory({
-    component: CartComponent,
+    component: CartPageComponent,
     providers: [FormBuilder],
     shallow: true,
   });

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthenticationService } from '../../_services/authentication.service';
 })
 export class MainNavigationBarComponent {
   isCollapsed = true;
-
+  shoppingCart = faShoppingCart;
   constructor(public authenticationService: AuthenticationService) {}
 
   toggleMenu() {

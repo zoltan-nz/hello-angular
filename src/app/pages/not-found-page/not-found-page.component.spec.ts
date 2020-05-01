@@ -1,11 +1,11 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { NotFoundPageComponent } from './not-found-page.component';
 
 describe('PageNotFoundComponent', () => {
-  let spectator: Spectator<PageNotFoundComponent>;
+  let spectator: Spectator<NotFoundPageComponent>;
   const createComponent = createComponentFactory({
-    component: PageNotFoundComponent,
+    component: NotFoundPageComponent,
     shallow: true,
   });
 

@@ -1,17 +1,19 @@
 import { Spectator } from '@ngneat/spectator';
 import { createComponentFactory } from '@ngneat/spectator/jest';
-import { StoreAppComponent } from './store-app.component';
+import { ProductCardComponent } from './product-card.component';
+import { productsResponse } from '../../../mirage/mocked-data/products';
 
-describe('StoreAppComponent', () => {
-  let spectator: Spectator<StoreAppComponent>;
+describe('ProductCardComponent', () => {
+  let spectator: Spectator<ProductCardComponent>;
   const createComponent = createComponentFactory({
-    component: StoreAppComponent,
+    component: ProductCardComponent,
     shallow: true,
   });
 
   beforeEach(() => (spectator = createComponent()));
 
   it('exists', () => {
+    spectator.setInput('product', productsResponse[0]);
     expect(spectator.component).toBeDefined();
   });
 });

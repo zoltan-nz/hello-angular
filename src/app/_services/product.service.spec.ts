@@ -2,7 +2,7 @@ import { ProductService } from './product.service';
 import { createServiceFactory, mockProvider, SpectatorService } from '@ngneat/spectator/jest';
 import { ProductAdapter } from './product.adapter';
 import { of } from 'rxjs';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductCardComponent } from '../pages/product-card/product-card.component';
 
 const URL = 'url';
 const products = describe('ProductService', () => {

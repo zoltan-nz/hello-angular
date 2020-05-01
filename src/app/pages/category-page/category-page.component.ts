@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { action, computed, observable } from 'mobx-angular';
-import Product from '../models/product.model';
-import CategoryService from '../services/category.service';
-import { ProductService } from '../services/product.service';
+import Product from '../../_models/product.model';
+import CategoryService from '../../_services/category.service';
+import { ProductService } from '../../_services/product.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { action, observable } from 'mobx-angular';
 import { Observable, throwError } from 'rxjs';
 import { catchError, finalize, map } from 'rxjs/operators';
-import { IProductsResponse } from '../models/product.interface';
-import Product from '../models/product.model';
+import { IProductsResponse } from '../_models/product.interface';
+import Product from '../_models/product.model';
 
 @Injectable({
   providedIn: 'root',

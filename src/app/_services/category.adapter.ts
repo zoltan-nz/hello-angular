@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { action, observable } from 'mobx-angular';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { ICategoryResponse } from '../models/category.interface';
-import Category from '../models/category.model';
+import { ICategoryResponse } from '../_models/category.interface';
+import Category from '../_models/category.model';
 
 @Injectable({
   providedIn: 'root',

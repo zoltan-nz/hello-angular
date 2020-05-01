@@ -1,4 +1,4 @@
-import { ICategory, ICategoryResponse } from '../../app/pages/store-app-page/models/category.interface';
+import { ICategory, ICategoryResponse } from '../../app/_models/category.interface';
 import { products, productsResponseListCategory2 } from './products';
 
 export const categories: ICategory[] = [
