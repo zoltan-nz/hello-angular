@@ -2,14 +2,14 @@
 
 {{ errorMessage }}
 
-<div class="card-columns" *mobxAutorun>
+<div *mobxAutorun>
   <ng-container *ngIf="isLoading">
     Loading...
   </ng-container>
 
   <ng-container *ngIf="products">
-    <div class="card" *ngFor="let product of products">
-      <store-app-product-card [product]="product"></store-app-product-card>
-    </div>
+    <ul *ngFor="let product of products">
+      <li><store-app-product-card [product]="product"></store-app-product-card></li>
+    </ul>
   </ng-container>
 </div>

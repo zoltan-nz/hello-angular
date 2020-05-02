@@ -8,11 +8,6 @@ import { AuthenticationService } from '../../_services/authentication.service';
   styleUrls: ['./main-navigation-bar.component.scss'],
 })
 export class MainNavigationBarComponent {
-  isCollapsed = true;
   shoppingCart = faShoppingCart;
   constructor(public authenticationService: AuthenticationService) {}
-
-  toggleMenu() {
-    this.isCollapsed = !this.isCollapsed;
-  }
 }
