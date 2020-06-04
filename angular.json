@@ -87,7 +87,11 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.ts",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "src/styles.scss"
+            ],
             "scripts": [],
             "codeCoverageExclude": ["**/{polyfills,test}.ts"]
           }
